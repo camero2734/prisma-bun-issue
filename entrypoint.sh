@@ -7,5 +7,5 @@ done
 bunx prisma migrate dev --name init
 bunx prisma generate
 
-bun run --watch app.ts
+RUST_BACKTRACE=full bun run --watch app.ts
 
