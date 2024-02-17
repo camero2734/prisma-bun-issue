@@ -1,15 +1,4 @@
 # prisma-bun-issue
+This reproduces an issue w/ Prisma <> Bun in versions since 1.0.18.
 
-To install dependencies:
-
-```bash
-bun install
-```
-
-To run:
-
-```bash
-bun run app.ts
-```
-
-This project was created using `bun init` in bun v1.0.26. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+Run with `docker-compose up`. This will result in errors. Change the Dockerfile's base image to `oven/sh:1.0.18-slim`, and it will pass with no issues.
