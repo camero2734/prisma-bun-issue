@@ -7,5 +7,10 @@
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "^0.1.45",
+    "@prisma/client": "5.9.1",
+    "prisma": "^5.9.1"
   }
 }

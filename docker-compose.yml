@@ -6,31 +6,22 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    entrypoint: [ "/code/.docker/entrypoint.sh" ]
-    restart: always
     container_name: prisma-bun-app
     depends_on:
-      - redis
       - db
-    env_file: .env
     environment:
       DATABASE_URL: "postgres://bunpostgresuser:bunpostgrespassword@db:5432/bunpostgresdb"
       NODE_ENV: "production"
-    ports:
-      - "2121:2121"
+    volumes:
+      - .:/code:delegated
+
   db:
     image: postgres:14.1
     restart: always
     container_name: prisma-bun-db
     ports:
       - 5432:5432
-    volumes:
-      - ./dbdata:/var/lib/postgresql
-    env_file: .env
     environment:
       POSTGRES_USER: bunpostgresuser
       POSTGRES_PASSWORD: bunpostgrespassword
       POSTGRES_DB: bunpostgresdb
-
-volumes:
-  dbdata:
