@@ -1,4 +1,4 @@
-FROM oven/bun:1.0.26-slim
+FROM oven/bun:1.0.27-slim
 
 USER root
 WORKDIR /code
